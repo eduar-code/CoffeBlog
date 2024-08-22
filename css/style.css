@@ -80,8 +80,14 @@ img {
 }
 
 /** Header*/
-.header {
+.webp .header{
+    background-image: url(../img/banner.webp);
+}
+.no-webp .header{
     background-image: url(../img/banner.jpg);
+}
+.header {
+    
     height: 60rem;
     background-size: cover;
     background-repeat: no-repeat;
@@ -169,6 +175,7 @@ img {
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 2rem;
+    border: none;
 }
 
 @media (min-width: 768px) {
@@ -177,6 +184,10 @@ img {
         /* el inline block es para que se reduzca pero permita tambien los margin y padin*/
 
     }
+}
+
+.boton:hover {
+    cursor: pointer;
 }
 
 .boton--primario {
@@ -229,17 +240,18 @@ img {
 
 /*la primera forma es con flexbox para acomodar una imagen y un texto alado*/
 @media (min-width: 768px) {
-    .sobre-nosotros{
+    .sobre-nosotros {
         display: flex;
         gap: 2rem;
     }
+
     .sobre-nosotros__imagen,
-    .sobre-nosotros__texto{
+    .sobre-nosotros__texto {
         flex-basis: 50%;
     }
 
     /*Lo de arriva se puede lograr con grid, asi...*/
-    .sobre-nosotros{
+    .sobre-nosotros {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 2rem;
@@ -252,12 +264,12 @@ img {
     border-bottom: 1px solid var(--gris);
 }
 
-.curso:last-of-type{
+.curso:last-of-type {
     border: 0;
 }
 
 @media (min-width: 768px) {
-    .curso{
+    .curso {
         display: grid;
         grid-template-columns: 1fr 2fr;
         column-gap: 2rem;
@@ -265,9 +277,36 @@ img {
 }
 
 /* contacto*/
-.contacto-bg{
+.contacto-bg {
     background-image: url(../img/contacto.jpg);
     height: 40rem;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.formulario {
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+}
+
+.campo {
+    display: flex;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+
+.campo__label {
+    flex: 0 0 9rem;
+    text-align: right;
+}
+
+.campo__field {
+    flex: 1;
+    border: 1px solid var(--gris);
+}
+
+.campo__field--textarea {
+    height: 20rem;
 }
